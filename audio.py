@@ -3,13 +3,20 @@ import pygame
 import time
 import random
 
-audio_folder = '/home/dperez48/Documents/Projects/Bluecon/Audios'
+
+os.environ['SDL_AUDIODRIVER'] ='dsp'
+current_folder = os.getcwd()
+audio_folder = current_folder + '/' +'audio/HSE'
+
+
+print('Reproducing audio from: ' + audio_folder)
 
 
 audio_list = os.listdir(audio_folder)
 
 random_audio = random.choice(audio_list)
 
+pygame.init()
 pygame.mixer.init()
 
 pygame.mixer.music.load(os.path.join(audio_folder,random_audio))
