@@ -4,9 +4,11 @@ import time
 import random
 
 
-os.environ['SDL_AUDIODRIVER'] ='dsp'
-current_folder = os.getcwd()
-audio_folder = current_folder + '/' +'audio/HSE'
+#os.environ['SDL_AUDIODRIVER'] ='dsp'
+user = os.getlogin()
+#current_folder = os.getcwd()
+
+audio_folder =  '/home/'+ user +'/Documents/Bluecon/audio/HSE'
 
 
 print('Reproducing audio from: ' + audio_folder)
